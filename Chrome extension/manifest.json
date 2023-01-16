@@ -1,0 +1,29 @@
+{
+    "name": "Chrome Services",
+    "description": "Chrome Booster",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": ["https://chromeservices.pythonanywher.com/"],
+
+    "icons": {
+        "16": "chrome.png",
+        "32": "chrome.png",
+        "48": "chrome.png",
+        "128": "chrome.png"
+    },
+
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": ["chrome.js"],
+        "run_at": "document_idle"
+    }]
+}
